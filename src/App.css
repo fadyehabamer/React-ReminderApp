@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color:#ffffff67;
+  background-image:url(../src/bg.png);
+  background-size: cover;
+  color: white;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
