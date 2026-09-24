@@ -18,7 +18,7 @@ export default function Todo(props) {
                 <td> {todo.daysLeft} </td>
                 {/* onClick={deleteItem(todo.id)} --> willl fire fuction automatically  */}
                 {/* you can use deleteItemFirst or deleteItemSecond */}
-                <td onClick={() => deleteItemSecond(todo.id)} > X </td>
+                <td><button type="button" className="delete-btn" aria-label={`Delete ${todo.name}`} onClick={() => deleteItemSecond(todo.id)}>X</button></td>
             </tr>
         )
     }) : <tr>
