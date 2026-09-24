@@ -6,6 +6,9 @@ const rows = () => screen.getAllByRole('row').slice(1); // skip header row
 const fillAndSubmit = (name, days) => {
   fireEvent.change(screen.getByLabelText('Reminder name'), { target: { value: name } });
   fireEvent.change(screen.getByLabelText('Days left'), { target: { value: days } });
+  // submit the form directly so the component's own validation is tested,
+  // not the browser's required/min checks
+  // eslint-disable-next-line testing-library/no-node-access
   fireEvent.submit(screen.getByRole('button', { name: 'Add' }).closest('form'));
 };
 
