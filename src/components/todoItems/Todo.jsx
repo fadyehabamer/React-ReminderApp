@@ -4,7 +4,7 @@ import './todo.css'
 // * Function Component ==> (PROPS) SENT as param + NO USE OF THIS.props 
 
 export default function Todo(props) {
-    const { todos, deleteItemFirst, deleteItemSecond } = props
+    const { todos, deleteItemSecond } = props
     let todosLength = todos.length
     // console.log(deleteItem)
     // console.log(todos)
