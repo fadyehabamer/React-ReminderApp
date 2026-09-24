@@ -5,18 +5,23 @@ import Add from './components/addItems/Add';
 import "./App.css"
 
 export default class App extends Component {
+  // Sequential ids: the old Math.random() * 1000 ids could collide, giving
+  // duplicate React keys and deleting two reminders with one click.
+  nextId = 4
+
   state = {
     items: [
-      { id: Math.floor(Math.random() * 1000), name: 'Study React', daysLeft: 22 },
-      { id: Math.floor(Math.random() * 1000), name: 'Study OOP', daysLeft: 23 },
-      { id: Math.floor(Math.random() * 1000), name: 'Grad. Project', daysLeft: 24 }
+      { id: 1, name: 'Study React', daysLeft: 22 },
+      { id: 2, name: 'Study OOP', daysLeft: 23 },
+      { id: 3, name: 'Grad. Project', daysLeft: 24 }
     ]
   }
 
   deleteItemFirst = (id) => {
     // console.log(id);
-    let newitems = this.state.items;
-    let i = newitems.findIndex(item => item.id === id)
+    let i = this.state.items.findIndex(item => item.id === id)
+    if (i === -1) return  // splice(-1, 1) would delete the last item
+    let newitems = [...this.state.items]
     newitems.splice(i, 1)
     this.setState({
       items: newitems
@@ -34,11 +39,10 @@ export default class App extends Component {
   }
 
   addItem = (item) => {
-    let newitems = this.state.items
-    newitems.push(item)
-    this.setState({
-      items: newitems
-    })
+    const newItem = { ...item, id: this.nextId++ }
+    this.setState(prevState => ({
+      items: [...prevState.items, newItem]
+    }))
   }
 
 
