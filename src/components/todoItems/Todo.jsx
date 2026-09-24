@@ -4,7 +4,7 @@ import './todo.css'
 // * Function Component ==> (PROPS) SENT as param + NO USE OF THIS.props 
 
 export default function Todo(props) {
-    const { todos, deleteItemFirst, deleteItemSecond } = props
+    const { todos, deleteItemSecond } = props
     let todosLength = todos.length
     // console.log(deleteItem)
     // console.log(todos)
@@ -18,7 +18,7 @@ export default function Todo(props) {
                 <td> {todo.daysLeft} </td>
                 {/* onClick={deleteItem(todo.id)} --> willl fire fuction automatically  */}
                 {/* you can use deleteItemFirst or deleteItemSecond */}
-                <td onClick={() => deleteItemSecond(todo.id)} > X </td>
+                <td><button type="button" className="delete-btn" aria-label={`Delete ${todo.name}`} onClick={() => deleteItemSecond(todo.id)}>X</button></td>
             </tr>
         )
     }) : <tr>

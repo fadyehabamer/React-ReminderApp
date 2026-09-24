@@ -28,3 +28,11 @@ tr:nth-child(even) {
     background-color: #F49B45;
     color:#fff
 }
+.delete-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 4px 8px;
+}
