@@ -1,4 +1,7 @@
 # React Reminder App
+
+[![CI](https://github.com/fadyehabamer/React-ReminderApp/actions/workflows/ci.yml/badge.svg)](https://github.com/fadyehabamer/React-ReminderApp/actions/workflows/ci.yml)
+
 > React , Components , ADD , Delete Operation , Responsive to small screens  ( with no media queries ) 
 
 <p align="center">
